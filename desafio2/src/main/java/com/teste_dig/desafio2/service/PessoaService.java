@@ -35,9 +35,9 @@ public class PessoaService {
 		return this.pessoaRepository.findBySalario(salario);
 	}
 
-	public void update(String name, Pessoa pessoa) {		
+	public void update(Pessoa pessoa) {		
 		if(pessoa.getId() == null) {
-			List<Pessoa> lista = byName(name);
+			List<Pessoa> lista = byName(pessoa.getNome());
 			lista.forEach(x-> { x.setIdade(pessoa.getIdade()); x.setNome(pessoa.getNome()); x.setSalario(pessoa.getSalario()); } );
 			this.pessoaRepository.saveAll(lista);
 		}else
