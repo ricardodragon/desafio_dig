@@ -1,3 +1,4 @@
+-Utilizado h2 como base de dados
 # desafio_dig
 *
 # Desafio1
