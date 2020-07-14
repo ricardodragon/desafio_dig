@@ -40,8 +40,12 @@ public class PessoaService {
 			List<Pessoa> lista = byName(pessoa.getNome());
 			lista.forEach(x-> { x.setIdade(pessoa.getIdade()); x.setNome(pessoa.getNome()); x.setSalario(pessoa.getSalario()); } );
 			this.pessoaRepository.saveAll(lista);
-		}else
-			this.pessoaRepository.save(pessoa);		
+		}else {
+			Pessoa p = byId(pessoa.getId()).get();
+			p.setIdade(pessoa.getIdade());p.setNome(pessoa.getNome());
+			p.setSalario(pessoa.getSalario());
+			this.pessoaRepository.save(p);		
+		}
 	}
 	
 }

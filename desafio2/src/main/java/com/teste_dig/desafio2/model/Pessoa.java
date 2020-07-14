@@ -10,6 +10,17 @@ import javax.persistence.Id;
 @Entity
 public class Pessoa implements Serializable{
 	
+	
+	
+	public Pessoa() {
+		
+	}
+	public Pessoa(Long i, String nome, Integer idade, Float salario) {
+		super();
+		this.nome = nome;
+		this.idade = idade;
+		this.salario = salario;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

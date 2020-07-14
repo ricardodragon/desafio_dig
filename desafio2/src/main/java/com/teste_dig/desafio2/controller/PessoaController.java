@@ -26,8 +26,8 @@ public class PessoaController {
 	private PessoaService pessoaService;
 	
 	@PostMapping
-	public ResponseEntity<Object> byId(@RequestBody PessoaBox pessoa) {
-		return new ResponseEntity<Object>(this.pessoaService.save(pessoa.getPessoa()), HttpStatus.OK);
+	public ResponseEntity<Pessoa> save(@RequestBody PessoaBox pessoa) {
+		return new ResponseEntity<Pessoa>(this.pessoaService.save(pessoa.getPessoa()), HttpStatus.OK);
 	}
 	
 	@GetMapping(path = "id/{id}",produces = MediaType.APPLICATION_JSON_VALUE)

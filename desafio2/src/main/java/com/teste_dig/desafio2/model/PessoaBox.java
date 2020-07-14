@@ -4,6 +4,12 @@ public class PessoaBox {
 	
 	private Pessoa pessoa;
 	
+	public PessoaBox() {	}
+	
+	public PessoaBox(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+
 	public Pessoa getPessoa() {
 		return this.pessoa;
 	}
